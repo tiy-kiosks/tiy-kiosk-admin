@@ -1,0 +1,7 @@
+<div class="reveal">
+  <div class="slides">
+    <% @kiosk.slides.active.ordered.each do |slide| %>
+      <%= render partial: slide.pattern, locals: {slide: slide} %>
+    <% end %>
+  </div>
+</div>

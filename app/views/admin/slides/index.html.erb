@@ -28,7 +28,7 @@
         No Slides found
       </td>
     <% else %>
-      <% @slides.each do |slide| %>
+      <% @slides.ordered.each do |slide| %>
         <tr>
           <td>
             <%= slide.order_number %>
