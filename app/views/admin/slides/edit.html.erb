@@ -1,0 +1,12 @@
+<div class="page-title">
+  <h1>Editing Slide</h1>
+</div>
+
+<%= simple_form_for [:admin, @kiosk, @slide] do |f| %>
+  <%= f.input :pattern, collection: %w(markdown today this_week_announcements meetups_this_week meetups_worth_this_week this_week_speaker comic) %>
+  <%= f.input :order_number, collection: (1..100) %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.input :markdown_content, as: :text, input_html: {rows: 10} %>
+  <%= f.submit class: "btn btn-success" %>
+<% end %>

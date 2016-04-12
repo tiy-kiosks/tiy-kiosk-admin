@@ -1,0 +1,46 @@
+<div class="page-header">
+  <h1>Slides <small><%= link_to 'Return to Kiosk', [:admin, @kiosk] %></small></h1>
+</div>
+
+<div class="well">
+  <p class="text-right">
+    <%= link_to 'New Slide', new_admin_kiosk_slide_path(@kiosk), class: "btn btn-primary" %>
+  </p>
+</div>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>
+        Name
+      </th>
+      <th>
+        Pattern
+      </th>
+      <th>
+        Edit
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @slides.empty? %>
+      <td colspan="3">
+        No Slides found
+      </td>
+    <% else %>
+      <% @slides.each do |slide| %>
+        <tr>
+          <td>
+            <%= slide.order_number %>
+          </td>
+          <td>
+            <%= slide.pattern %>
+          </td>
+          <td>
+            <%= link_to 'Edit', edit_admin_kiosk_slide_path(@kiosk, slide) %>
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

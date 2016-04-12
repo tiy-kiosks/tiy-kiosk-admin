@@ -1,0 +1,6 @@
+<h1>Admin Kiosks</h1>
+
+<%= simple_form_for [:admin, @kiosk] do |f| %>
+  <%= f.input :name %>
+  <%= f.submit class: "btn btn-primary btn-lg" %>
+<% end %>

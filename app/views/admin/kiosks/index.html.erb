@@ -1,0 +1,53 @@
+<div class="page-header">
+  <h1>Kiosks</h1>
+</div>
+
+<div class="well">
+  <p class="text-right">
+    <%= link_to 'New Kiosk', new_admin_kiosk_path, class: "btn btn-primary" %>
+  </p>
+</div>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>
+        Name
+      </th>
+      <th>
+        URL
+      </th>
+      <th>
+        Edit
+      </th>
+      <th>
+        Slides
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @kiosks.empty? %>
+      <td colspan="3">
+        No Kiosks found
+      </td>
+    <% else %>
+      <% @kiosks.each do |kiosk| %>
+        <tr>
+          <td>
+            <%= link_to kiosk.name, [:admin, kiosk] %>
+          </td>
+          <td>
+            <input type="text" name="name" value="<%= kiosk_url kiosk, only_path: false %>" class="form-control">
+
+          </td>
+          <td>
+            <%= link_to 'Edit', edit_admin_kiosk_path(kiosk) %>
+          </td>
+          <td>
+            <%= link_to "Slides (#{kiosk.slides.active.count})", admin_kiosk_slides_path(kiosk) %>
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

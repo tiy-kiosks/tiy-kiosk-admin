@@ -2,11 +2,16 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root 'dashboard#show', as: :root
+    resources :kiosks do
+      resources :slides
+    end
 
     get 'session' => 'sessions#new', as: :sign_in
     post 'session' => 'sessions#create'
     delete 'session' => 'sessions#delete', as: :sign_out
   end
+
+  get "/:id" => 'kiosks#show', as: :kiosk
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

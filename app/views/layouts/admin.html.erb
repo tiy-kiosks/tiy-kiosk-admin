@@ -8,22 +8,12 @@
 </head>
 <body>
 
-  <div class="flash">
-    <% if notice %>
-      <div class="alert alert-info">
-        <%= notice %>
-      </div>
-    <% end %>
-    <% if alert %>
-      <div class="alert alert-danger">
-        <%= alert %>
-      </div>
-    <% end %>
-  </div>
+  <%= render partial: 'layouts/flash' %>
 
   <header>
     <ul>
       <li><%= link_to 'Admin Root', admin_root_path %></li>
+      <li><%= link_to 'Admin Kiosks', admin_root_path %></li>
       <li><%= link_to 'Sign Out', admin_sign_out_path, method: :delete %></li>
     </ul>
   </header>

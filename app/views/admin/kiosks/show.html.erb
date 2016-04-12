@@ -1,0 +1,12 @@
+<h1><%= @kiosk.name %></h1>
+
+<%= link_to 'Manage Slides', [:admin, @kiosk, :slides ], class: "btn btn-block btn-lg btn-primary" %>
+
+<dl class="">
+  <dt>Slides</dt>
+  <dd><%= @kiosk.slides.active.count %></dd>
+  <dt>URL</dt>
+  <dd>
+    <input type="text" name="name" value="<%= kiosk_url @kiosk, only_path: false %>" class="form-control">
+  </dd>
+</dl>
