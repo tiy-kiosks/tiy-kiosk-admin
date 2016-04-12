@@ -1,0 +1,16 @@
+.flash {
+  text-align: center;
+}
+header {
+  ul{
+    list-style: none;
+    display: flex;
+    margin-left: 0;
+    padding-left: 0;
+    li {
+      flex: 1;
+      text-align: center;
+      padding: 1rem;
+    }
+  }
+}

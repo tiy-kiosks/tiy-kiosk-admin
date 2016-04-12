@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+
+  namespace :admin do
+    root 'dashboard#show', as: :root
+
+    get 'session' => 'sessions#new', as: :sign_in
+    post 'session' => 'sessions#create'
+    delete 'session' => 'sessions#delete', as: :sign_out
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

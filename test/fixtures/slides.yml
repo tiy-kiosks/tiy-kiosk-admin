@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  kiosk_id: 
+  order_number: 1
+  start_date: 2016-04-12
+  end_date: 2016-04-12
+  pattern: MyString
+  markdown_content: MyString
+
+two:
+  kiosk_id: 
+  order_number: 1
+  start_date: 2016-04-12
+  end_date: 2016-04-12
+  pattern: MyString
+  markdown_content: MyString
