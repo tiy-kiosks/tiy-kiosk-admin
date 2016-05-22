@@ -37,8 +37,9 @@
             <%= slide.pattern %>
           </td>
           <td>
-            <%= link_to 'Edit', edit_admin_kiosk_slide_path(@kiosk, slide) %>
+            <%= link_to 'Edit', edit_admin_kiosk_slide_path(@kiosk, slide) %> <%= link_to "Delete", admin_kiosk_slide_path(@kiosk, slide), :method => :delete, :confirm => "Are you sure?", class: "btn btn-primary" %>
           </td>
+          <td></td>
         </tr>
       <% end %>
     <% end %>

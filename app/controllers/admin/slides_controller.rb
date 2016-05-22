@@ -41,6 +41,15 @@ class Admin::SlidesController < Admin::AdminController
     end
   end
 
+  def destroy
+    @slide = @kiosk.slides.find params[:id]
+    @slide.destroy
+
+    respond_to do |format|
+      format.html { redirect_to [:admin, @kiosk, :slides], notice: "Destroyed!" }
+    end
+  end
+
   private
 
   def slide_params
