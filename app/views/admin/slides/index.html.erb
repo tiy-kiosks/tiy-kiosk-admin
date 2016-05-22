@@ -8,7 +8,7 @@
   </p>
 </div>
 
-<table class="table table-bordered table-striped">
+<table class="table table-bordered table-striped table-hover">
   <thead>
     <tr>
       <th>
@@ -18,7 +18,7 @@
         Pattern
       </th>
       <th>
-        Edit
+        Action
       </th>
     </tr>
   </thead>
@@ -37,9 +37,8 @@
             <%= slide.pattern %>
           </td>
           <td>
-            <%= link_to 'Edit', edit_admin_kiosk_slide_path(@kiosk, slide) %> <%= link_to "Delete", admin_kiosk_slide_path(@kiosk, slide), :method => :delete, :confirm => "Are you sure?", class: "btn btn-primary" %>
+            <%= link_to 'Edit', edit_admin_kiosk_slide_path(@kiosk, slide), class: "btn btn-primary" %> <%= link_to "Delete", admin_kiosk_slide_path(@kiosk, slide), :method => :delete, :confirm => "Are you sure?", class: "btn btn-danger" %>
           </td>
-          <td></td>
         </tr>
       <% end %>
     <% end %>

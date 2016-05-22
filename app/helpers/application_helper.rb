@@ -57,5 +57,18 @@ module ApplicationHelper
     all_meetups_worth_going.select {|t| t["time"] >= Time.now.beginning_of_week(start_day = :sunday).to_i*1000 && Time.now.end_of_week(end_day = :sunday).to_i*1000 >= t["time"] }
   end
 
+  def fetch_announcements
+    json = open("https://tiyspeakers.herokuapp.com/api/v1/announcements").read
+    JSON.parse(json, object_class: OpenStruct)["announcements"]
+  end
+
+  def all_announcements
+    @all_announcements ||= fetch_announcements
+  end
+
+  def this_week_announcements
+    all_announcements.select {|t| t["date"] >= Time.now.beginning_of_week(start_day = :sunday) && Time.now.end_of_week(end_day = :saturday) >= t["date"] }
+  end
+
 
 end
