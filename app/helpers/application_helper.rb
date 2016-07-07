@@ -70,5 +70,18 @@ module ApplicationHelper
     all_announcements.select {|t| t["date"] >= Time.now.beginning_of_week(start_day = :sunday) && Time.now.end_of_week(end_day = :saturday) >= t["date"] }
   end
 
+  def fetch_fun_facts
+      json = open("https://tiyfunfactz.herokuapp.com/students.json").read
+      JSON.parse(json, object_class: OpenStruct)["students"]
+  end
+
+  def all_fun_facts
+    @all_fun_facts ||= fetch_fun_facts
+  end
+
+  def sample_fun_facts
+    all_fun_facts.sample(5)
+  end
+
 
 end
