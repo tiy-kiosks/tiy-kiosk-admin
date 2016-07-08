@@ -1,10 +1,10 @@
-<% sample_fun_facts.each do |ff| %>
+<% all_fun_facts.each do |ff| %>
   <section>
     <h3>Fun Facts About</h3>
-    <h3> <%= ff.name %> </h3>
+    <h3> <%= ff.name.titleize %> </h3>
     <h4><%= ff.cohort.name %></h4>
      <%= image_tag("https://tiyfunfactz.herokuapp.com#{ff.profile_image}", :class => "circle") %>
-     <h4> <%= ff.fun_fact %>  </h4>
+     <h4> "<%= ff.fun_fact %>"</h4>
 
   </section>
 <% end %>
