@@ -83,5 +83,18 @@ module ApplicationHelper
     all_fun_facts.sample(5)
   end
 
+  def fetch_all_demos
+    json = open("https://tiydemoday.herokuapp.com/api/v1/students").read
+    JSON.parse(json, object_class: OpenStruct)["students"]
+  end
+
+  def all_demos
+    @all_demos ||= fetch_all_demos
+  end
+
+  def demo
+    all_demos.select {|t| t["cohort_id"] == 19 }.sort_by {|lastname| lastname["name"].split(" ").last}
+  end
+
 
 end
