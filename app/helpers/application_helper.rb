@@ -93,7 +93,7 @@ module ApplicationHelper
   end
 
   def demo
-    all_demos.select {|t| t["cohort_id"] == 19 }.sort_by {|lastname| lastname["name"].split(" ").last}
+    all_demos.select {|t| t["cohort_id"] == 20 }.sort_by {|lastname| lastname["name"].split(" ").last}
   end
 
 
