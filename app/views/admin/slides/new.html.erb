@@ -3,7 +3,7 @@
 </div>
 
 <%= simple_form_for [:admin, @kiosk, @slide] do |f| %>
-  <%= f.input :pattern, collection: %w(markdown today announcements meetups_at_tiy meetups_worth_this_week this_week_speaker comic about grill iron_pints wifi fun_facts demo) %>
+  <%= f.input :pattern, collection: %w(markdown today announcements meetups_at_tiy meetups_worth_this_week this_week_speaker comic about grill iron_pints wifi fun_facts demo welcome_to_demo_day) %>
   <%= f.input :order_number, collection: (1..100) %>
   <%= f.input :start_date %>
   <%= f.input :end_date %>
