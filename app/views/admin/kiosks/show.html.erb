@@ -7,6 +7,6 @@
   <dd><%= @kiosk.slides.active.count %></dd>
   <dt>URL</dt>
   <dd>
-    <input type="text" name="name" value="<%= kiosk_url @kiosk, only_path: false %>" class="form-control">
+            <%= link_to kiosk_url(@kiosk), kiosk_url(@kiosk) %>
   </dd>
 </dl>

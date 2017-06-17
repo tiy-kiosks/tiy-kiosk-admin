@@ -37,7 +37,7 @@
             <%= link_to kiosk.name, [:admin, kiosk] %>
           </td>
           <td>
-            <input type="text" name="name" value="<%= kiosk_url kiosk, only_path: false %>" class="form-control">
+            <%= link_to kiosk_url(kiosk), kiosk_url(kiosk) %>
 
           </td>
           <td>
