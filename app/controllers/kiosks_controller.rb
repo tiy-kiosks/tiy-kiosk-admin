@@ -1,6 +1,10 @@
 class KiosksController < ApplicationController
 
+
+  def index
+    @kiosks = Kiosk.all
+  end
   def show
-    @kiosk = Kiosk.find params[:id]
+    @kiosk = Kiosk.last
   end
 end

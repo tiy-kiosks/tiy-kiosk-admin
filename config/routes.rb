@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   get "/:id" => 'kiosks#show', as: :kiosk
 
+  root 'kiosks#show'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
