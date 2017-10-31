@@ -14,8 +14,8 @@ module ApplicationHelper
   end
 
   def fetch_speakers
-    json = open("https://tiyspeakers.herokuapp.com/api/v1/speakers").read
-    JSON.parse(json, object_class: OpenStruct)["speakers"]
+    json = open("https://tiyspeakers.herokuapp.com/api/talks").read
+    JSON.parse(json, object_class: OpenStruct)
   end
 
 
@@ -26,8 +26,8 @@ module ApplicationHelper
   def this_weeks_speakers
 
     all_speakers.select do |t|
-      talk_date = t["date"] || "3000-02-02".to_date.strftime('%m/%d/%Y')
-      talk_date >= Time.now.beginning_of_week(start_day = :sunday).strftime('%m/%d/%Y') && Time.now.end_of_week(end_day = :saturday).strftime('%m/%d/%Y') >= talk_date
+      talk_date = t["date"] || Date.parse("3000-02-02").to_date.strftime('%m/%d/%Y')
+      talk_date >= Time.now.beginning_of_week(start_day = :sunday) && Time.now.end_of_week(end_day = :saturday) >= talk_date
     end.sort_by {|date| date.date}
   end
 
